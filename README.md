@@ -1,18 +1,19 @@
-# GitHub Portfolio Site
-
-## Setup
-
-1. Replace `YOUR_GITHUB_USERNAME` in `index.html`
-2. Push to a repo named: `your-username.github.io`
-3. Enable GitHub Pages (main branch, root)
+# Production GitHub Portfolio (SpyderDave)
 
 ## Features
+- No runtime API calls
+- Uses GitHub Actions to refresh data hourly
+- Fast + reliable GitHub Pages site
 
-- Auto-fetches all public repos
-- Sorts by last updated
-- Clean portfolio layout
-- No build tools required
+## Setup
+1. Create repo: SpyderDave.github.io
+2. Upload all files
+3. Enable GitHub Pages (main / root)
+4. Ensure Actions are enabled
 
-## Deployment
+## How it works
+- GitHub Actions pulls repo list → saves to repos.json
+- Website reads repos.json (no API limits)
 
-Just push to GitHub — no pipeline needed.
+## Manual refresh
+Go to Actions → "Update Repo List" → Run workflow
