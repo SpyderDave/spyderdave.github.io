@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,42 +10,22 @@
 
 <header>
 <h1>SpyderDave's Projects</h1>
-<p>Static, fast, no API limits</p>
+<p>Static, fast, auto-updated</p>
 </header>
 
 <div id="nav"></div>
 
 <div class="container">
-<div class="grid" id="repo-list">Loading...</div>
+<div class="controls">
+<input id="search" placeholder="Search repos...">
+<select id="language"></select>
 </div>
 
-<div class="footer">
-Last updated: <span id="updated"></span>
+<div class="grid" id="repo-list"></div>
 </div>
+
+<div class="footer">Auto-updated via GitHub Actions</div>
 
 <script src="script.js"></script>
-
-<script>
-fetch('repos.json')
-.then(r => r.json())
-.then(data => {
-  const c = document.getElementById('repo-list');
-  c.innerHTML = '';
-  data.sort((a,b)=> new Date(b.updated_at)-new Date(a.updated_at));
-  data.forEach(repo=>{
-    if(repo.fork) return;
-    const d=document.createElement('div');
-    d.className='card';
-    d.innerHTML = `
-      <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
-      <p>${repo.description || "No description provided."}</p>
-      <p>⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}</p>
-    `;
-    c.appendChild(d);
-  });
-  document.getElementById('updated').innerText = new Date().toLocaleString();
-});
-</script>
-
 </body>
 </html>
