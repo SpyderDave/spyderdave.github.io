@@ -7,35 +7,33 @@ if(localStorage.getItem('dark')==='true'){document.body.classList.add('dark');}
 
 // Repo list + search/filter
 function loadRepos(){
- fetch('repos.json').then(r=>r.json()).then(data=>{
-  const c=document.getElementById('repo-list'); if(!c) return;
-  const search=document.getElementById('search');
-  const lang=document.getElementById('language');
+ fetch('repos.json')
+ .then(r=>r.json())
+ .then(data=>{
+  const c=document.getElementById('repo-list');
+  if(!c) return;
 
-  function render(){
-    let filtered=data.filter(r=>!r.fork);
-    if(search && search.value){
-      filtered=filtered.filter(r=>r.name.toLowerCase().includes(search.value.toLowerCase()) || (r.description||'').toLowerCase().includes(search.value.toLowerCase()));
-    }
-    if(lang && lang.value!=='all'){
-      filtered=filtered.filter(r=>r.language===lang.value);
-    }
+  data
+    .filter(r=>!r.fork)
+    .sort((a,b)=> new Date(b.updated_at)-new Date(a.updated_at))
+    .forEach(repo=>{
+      const d=document.createElement('div');
+      d.className='card';
 
-    filtered.sort((a,b)=> new Date(b.updated_at)-new Date(a.updated_at));
-
-    c.innerHTML = filtered.map(repo=>`
-      <div class="card">
+      d.innerHTML = `
         <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
-        <p>${repo.description||"No description provided."}</p>
+        <p>${repo.description || "No description provided."}</p>
         <div>
           ${repo.language ? `<span class="badge">${repo.language}</span>`:''}
           ${repo.featured ? `<span class="badge">⭐ Featured</span>`:''}
         </div>
         <p>⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}</p>
-      </div>
-    `).join('');
-  }
+      `;
 
+      c.appendChild(d);
+    });
+ });
+}
   if(search) search.addEventListener('input',render);
   if(lang) lang.addEventListener('change',render);
 
