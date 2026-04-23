@@ -1,3 +1,40 @@
+
+function loadRepos(){
+  const c = document.getElementById('repo-list');
+  if (!c) return;
+
+  fetch('repos.json')
+    .then(r => r.json())
+    .then(data => {
+      c.innerHTML = "";
+
+      data
+        .filter(r => !r.fork)
+        .sort((a,b)=> new Date(b.updated_at)-new Date(a.updated_at))
+        .forEach(repo=>{
+          const d = document.createElement('div');
+          d.className='card';
+
+          d.innerHTML = `
+            <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
+            <p>${repo.description || "No description provided."}</p>
+            <div>
+              ${repo.language ? `<span class="badge">${repo.language}</span>`:''}
+              ${repo.featured ? `<span class="badge">⭐ Featured</span>`:''}
+            </div>
+            <p>⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}</p>
+          `;
+
+          c.appendChild(d);
+        });
+    })
+    .catch(err => {
+      c.innerHTML = "<p>Failed to load repositories</p>";
+      console.error(err);
+    });
+}
+
+
 // Load nav + highlight active page
 fetch('nav.html')
 .then(r=>r.text())
@@ -98,3 +135,9 @@ function loadPost(){
 loadRepos();
 loadBlogList();
 loadPost();
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadRepos();
+  if (typeof loadBlogList === "function") loadBlogList();
+  if (typeof loadPost === "function") loadPost();
+});
