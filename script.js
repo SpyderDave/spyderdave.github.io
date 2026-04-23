@@ -1,152 +1,63 @@
+function loadComponent(id, file) {
+  const el = document.getElementById(id);
+  if (!el) return;
 
-function loadRepos(){
-  const c = document.getElementById('repo-list');
-  if (!c) return;
+  fetch(file)
+    .then(res => res.text())
+    .then(html => el.innerHTML = html)
+    .catch(err => console.error(`Failed to load ${file}`, err));
+}
 
-  fetch('repos.json')
-    .then(r => r.json())
+function initLayout() {
+  loadComponent("nav", "nav.html");
+  loadComponent("footer", "footer.html");
+}
+
+let reposLoaded = false;
+
+function loadRepos() {
+  if (reposLoaded) return;
+  reposLoaded = true;
+
+  const container = document.getElementById("repo-list");
+  const loading = document.getElementById("loading");
+
+  if (!container) return;
+
+  fetch("repos.json")
+    .then(res => res.json())
     .then(data => {
-      c.innerHTML = "";
+      container.innerHTML = "";
 
       data
         .filter(r => !r.fork)
-        .sort((a,b)=> new Date(b.updated_at)-new Date(a.updated_at))
-        .forEach(repo=>{
-          const d = document.createElement('div');
-          d.className='card';
+        .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+        .forEach(repo => {
+          const d = document.createElement("div");
+          d.className = "card";
 
           d.innerHTML = `
             <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
             <p>${repo.description || "No description provided."}</p>
-            <div>
-              ${repo.language ? `<span class="badge">${repo.language}</span>`:''}
-              ${repo.featured ? `<span class="badge">⭐ Featured</span>`:''}
-            </div>
             <p>⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}</p>
           `;
 
-          c.appendChild(d);
-        })
-.finally(() => { const l=document.getElementById('loading'); if(l) l.remove(); });
+          container.appendChild(d);
+        });
     })
     .catch(err => {
-      c.innerHTML = "<p>Failed to load repositories</p>";
+      container.innerHTML = "<p>Failed to load repositories</p>";
       console.error(err);
     })
-.finally(() => { const l=document.getElementById('loading'); if(l) l.remove(); });
+    .finally(() => {
+      if (loading) loading.remove();
+    });
 }
-
-
-// Load nav + highlight active page
-fetch('nav.html')
-.then(r=>r.text())
-.then(html=>{
-  const navContainer = document.getElementById('nav');
-  if(!navContainer) return;
-
-  navContainer.innerHTML = html;
-
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-
-  const links = navContainer.querySelectorAll('a');
-  links.forEach(link=>{
-    const href = link.getAttribute('href');
-    if(href === currentPage){
-      link.classList.add('active');
-    }
-  })
-.finally(() => { const l=document.getElementById('loading'); if(l) l.remove(); });
-})
-.finally(() => { const l=document.getElementById('loading'); if(l) l.remove(); });
-
-// Dark mode
-function toggleDarkMode(){
-  document.body.classList.toggle('dark');
-  localStorage.setItem('dark', document.body.classList.contains('dark'));
-}
-
-// Persist dark mode
-if(localStorage.getItem('dark') === 'true'){
-  document.body.classList.add('dark');
-}
-
-// Load repos (simple list, no filters)
-function loadRepos(){
- fetch('repos.json')
- .then(r=>r.json())
- .then(data=>{
-  const c=document.getElementById('repo-list');
-  if(!c) return;
-
-  data
-    .filter(r=>!r.fork)
-    .sort((a,b)=> new Date(b.updated_at)-new Date(a.updated_at))
-    .forEach(repo=>{
-      const d=document.createElement('div');
-      d.className='card';
-
-      d.innerHTML = `
-        <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
-        <p>${repo.description || "No description provided."}</p>
-        <div>
-          ${repo.language ? `<span class="badge">${repo.language}</span>`:''}
-          ${repo.featured ? `<span class="badge">⭐ Featured</span>`:''}
-        </div>
-        <p>⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}</p>
-      `;
-
-      c.appendChild(d);
-    })
-.finally(() => { const l=document.getElementById('loading'); if(l) l.remove(); });
- })
-.finally(() => { const l=document.getElementById('loading'); if(l) l.remove(); });
-}
-
-// Blog list
-function loadBlogList(){
- fetch('posts.json')
- .then(r=>r.json())
- .then(posts=>{
-  const c=document.getElementById('blog-list');
-  if(!c) return;
-
-  posts.sort((a,b)=> new Date(b.date)-new Date(a.date));
-
-  c.innerHTML = posts.map(p=>`
-    <div class="card">
-      <h3><a href="blog.html?post=${p.file}">${p.title}</a></h3>
-      <p>${p.date}</p>
-      <p>${p.summary}</p>
-    </div>
-  `).join('');
- })
-.finally(() => { const l=document.getElementById('loading'); if(l) l.remove(); });
-}
-
-// Load single blog post
-function loadPost(){
- const params=new URLSearchParams(window.location.search);
- const post=params.get('post');
- if(!post) return;
-
- fetch(`blog/${post}`)
- .then(r=>r.text())
- .then(md=>{
-  if(typeof marked !== "undefined"){
-    document.getElementById('blog-content').innerHTML = marked.parse(md);
-  }
- })
-.finally(() => { const l=document.getElementById('loading'); if(l) l.remove(); });
-}
-
-// Init
-loadRepos();
-loadBlogList();
-loadPost();
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadRepos();
-  if (typeof loadBlogList === "function") loadBlogList();
-  if (typeof loadPost === "function") loadPost();
-})
-.finally(() => { const l=document.getElementById('loading'); if(l) l.remove(); });
+  initLayout();
+
+  if (document.getElementById("repo-list")) {
+    loadRepos();
+  }
+});
