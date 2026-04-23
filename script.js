@@ -26,12 +26,14 @@ function loadRepos(){
           `;
 
           c.appendChild(d);
-        });
+        })
+.finally(() => { const l=document.getElementById('loading'); if(l) l.remove(); });
     })
     .catch(err => {
       c.innerHTML = "<p>Failed to load repositories</p>";
       console.error(err);
-    });
+    })
+.finally(() => { const l=document.getElementById('loading'); if(l) l.remove(); });
 }
 
 
@@ -52,8 +54,10 @@ fetch('nav.html')
     if(href === currentPage){
       link.classList.add('active');
     }
-  });
-});
+  })
+.finally(() => { const l=document.getElementById('loading'); if(l) l.remove(); });
+})
+.finally(() => { const l=document.getElementById('loading'); if(l) l.remove(); });
 
 // Dark mode
 function toggleDarkMode(){
@@ -92,8 +96,10 @@ function loadRepos(){
       `;
 
       c.appendChild(d);
-    });
- });
+    })
+.finally(() => { const l=document.getElementById('loading'); if(l) l.remove(); });
+ })
+.finally(() => { const l=document.getElementById('loading'); if(l) l.remove(); });
 }
 
 // Blog list
@@ -113,7 +119,8 @@ function loadBlogList(){
       <p>${p.summary}</p>
     </div>
   `).join('');
- });
+ })
+.finally(() => { const l=document.getElementById('loading'); if(l) l.remove(); });
 }
 
 // Load single blog post
@@ -128,7 +135,8 @@ function loadPost(){
   if(typeof marked !== "undefined"){
     document.getElementById('blog-content').innerHTML = marked.parse(md);
   }
- });
+ })
+.finally(() => { const l=document.getElementById('loading'); if(l) l.remove(); });
 }
 
 // Init
@@ -140,4 +148,5 @@ document.addEventListener("DOMContentLoaded", () => {
   loadRepos();
   if (typeof loadBlogList === "function") loadBlogList();
   if (typeof loadPost === "function") loadPost();
-});
+})
+.finally(() => { const l=document.getElementById('loading'); if(l) l.remove(); });
