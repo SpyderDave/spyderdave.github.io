@@ -1,9 +1,17 @@
+#nav-wrapper{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background:#0d1117;
+}
 
-body{margin:0;font-family:Arial}
-#nav-wrapper{position:sticky;top:0;z-index:1000;background:#0d1117}
-#nav{min-height:50px}
-nav{display:flex;gap:20px;padding:16px 24px}
-nav a{color:white;text-decoration:none}
-#content{max-width:900px;margin:40px auto;padding:0 20px}
-.card{border:1px solid #ddd;border-radius:10px;padding:20px;margin-bottom:20px}
-#loading{text-align:center;padding:30px;font-weight:bold}
+#nav{
+  min-height:50px;
+}
+
+.card{
+  border:1px solid #ddd;
+  border-radius:10px;
+  padding:20px;
+  margin-bottom:20px;
+}

@@ -1,7 +1,77 @@
-<!doctype html><html><head><meta charset='utf-8'><title>SpyderDave</title><link rel='stylesheet' href='style.css'></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>SpyderDave</title>
+
+  <meta
+    name="description"
+    content="Projects, portfolio, and writing by SpyderDave"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
-<header id="nav-wrapper"><div id="nav"></div></header>
-<main id="content"><h1>Projects</h1><div id="loading">Loading...</div><div id="repo-list"></div></main>
-<footer id="footer"></footer>
-<script src="script.js"></script>
-</body></html>
+
+  <!-- =========================
+       Sticky Shared Navigation
+  ========================== -->
+  <header id="nav-wrapper">
+    <div id="nav"></div>
+  </header>
+
+
+  <!-- =========================
+       Hero / Intro
+  ========================== -->
+  <main id="content">
+
+    <section class="hero">
+      <h1>Hi, I'm Dave</h1>
+
+      <p>
+        Cloud, security, automation, and platform engineering
+        projects from my GitHub repositories.
+      </p>
+    </section>
+
+
+    <!-- =========================
+         Repository Section
+    ========================== -->
+    <section id="projects">
+
+      <h2>Featured Repositories</h2>
+
+      <!-- Removed automatically by JS -->
+      <div id="loading">
+        Loading repositories...
+      </div>
+
+      <!-- Populated by script.js -->
+      <div id="repo-list"></div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       Shared Footer
+  ========================== -->
+  <footer id="footer"></footer>
+
+
+  <!-- =========================
+       Main Script
+  ========================== -->
+  <script src="script.js"></script>
+
+</body>
+</html>
