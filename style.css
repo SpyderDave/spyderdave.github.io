@@ -2,16 +2,37 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background:#0d1117;
+  background: #111827; /* dark slate */
+  border-bottom: 1px solid #374151;
 }
 
 #nav{
-  min-height:50px;
+  min-height:60px;
 }
 
-.card{
-  border:1px solid #ddd;
-  border-radius:10px;
-  padding:20px;
-  margin-bottom:20px;
+nav{
+  display:flex;
+  align-items:center;
+  gap:28px;
+  padding:18px 28px;
+}
+
+/* Menu links */
+nav a{
+  color:#F9FAFB;          /* bright readable white */
+  text-decoration:none;
+  font-weight:600;
+  transition:0.2s ease;
+}
+
+/* Hover */
+nav a:hover{
+  color:#60A5FA;          /* blue highlight */
+}
+
+/* Active page (optional) */
+nav a.active{
+  color:#93C5FD;
+  border-bottom:2px solid #93C5FD;
+  padding-bottom:4px;
 }
