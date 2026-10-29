@@ -1,11 +1,29 @@
 [
   {
-    "name": "aws-identity-management",
-    "html_url": "https://github.com/SpyderDave/aws-identity-management",
-    "description": "This repository is a generalized, sanitized version of a real implementation for managing AWS IAM Identity Center at scale in an AWS Org",
+    "name": "aws-ec2-instance-management",
+    "html_url": "https://github.com/SpyderDave/aws-ec2-instance-management",
+    "description": "Automated installation of software using a centralized management approach.",
     "stargazers_count": 0,
     "forks_count": 0,
-    "updated_at": "2026-10-29T18:09:39Z",
+    "updated_at": "2026-10-29T20:38:12Z",
+    "language": null
+  },
+  {
+    "name": "spyderdave-okta-utilities",
+    "html_url": "https://github.com/SpyderDave/spyderdave-okta-utilities",
+    "description": null,
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "updated_at": "2026-10-29T20:06:40Z",
+    "language": "Python"
+  },
+  {
+    "name": "cloudtrail-sanitizer",
+    "html_url": "https://github.com/SpyderDave/cloudtrail-sanitizer",
+    "description": null,
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "updated_at": "2026-10-29T19:40:09Z",
     "language": "Python"
   },
   {
@@ -14,8 +32,17 @@
     "description": "This website",
     "stargazers_count": 0,
     "forks_count": 0,
-    "updated_at": "2026-10-29T12:39:40Z",
+    "updated_at": "2026-10-29T18:52:45Z",
     "language": "HTML"
+  },
+  {
+    "name": "aws-identity-management",
+    "html_url": "https://github.com/SpyderDave/aws-identity-management",
+    "description": "This repository is a generalized, sanitized version of a real implementation for managing AWS IAM Identity Center at scale in an AWS Org",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "updated_at": "2026-10-29T18:09:39Z",
+    "language": "Python"
   },
   {
     "name": "payments-api-deploy-sample",
