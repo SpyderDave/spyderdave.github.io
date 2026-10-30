@@ -1,5 +1,14 @@
 [
   {
+    "name": "spyderdave.github.io",
+    "html_url": "https://github.com/SpyderDave/spyderdave.github.io",
+    "description": "This website",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "updated_at": "2026-10-29T23:10:21Z",
+    "language": "HTML"
+  },
+  {
     "name": "aws-ec2-instance-management",
     "html_url": "https://github.com/SpyderDave/aws-ec2-instance-management",
     "description": "Automated installation of software using a centralized management approach.",
@@ -25,15 +34,6 @@
     "forks_count": 0,
     "updated_at": "2026-10-29T19:40:09Z",
     "language": "Python"
-  },
-  {
-    "name": "spyderdave.github.io",
-    "html_url": "https://github.com/SpyderDave/spyderdave.github.io",
-    "description": "This website",
-    "stargazers_count": 0,
-    "forks_count": 0,
-    "updated_at": "2026-10-29T18:52:45Z",
-    "language": "HTML"
   },
   {
     "name": "aws-identity-management",
