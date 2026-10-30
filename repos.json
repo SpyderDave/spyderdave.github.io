@@ -1,11 +1,20 @@
 [
   {
+    "name": "aws-eks-management",
+    "html_url": "https://github.com/SpyderDave/aws-eks-management",
+    "description": null,
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "updated_at": "2026-10-30T21:49:58Z",
+    "language": "Python"
+  },
+  {
     "name": "spyderdave.github.io",
     "html_url": "https://github.com/SpyderDave/spyderdave.github.io",
     "description": "This website",
     "stargazers_count": 0,
     "forks_count": 0,
-    "updated_at": "2026-10-30T12:30:41Z",
+    "updated_at": "2026-10-30T18:29:32Z",
     "language": "HTML"
   },
   {
