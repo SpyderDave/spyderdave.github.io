@@ -1,5 +1,14 @@
 [
   {
+    "name": "spyderdave.github.io",
+    "html_url": "https://github.com/SpyderDave/spyderdave.github.io",
+    "description": "This website",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "updated_at": "2026-10-30T22:52:40Z",
+    "language": "HTML"
+  },
+  {
     "name": "aws-eks-management",
     "html_url": "https://github.com/SpyderDave/aws-eks-management",
     "description": null,
@@ -7,15 +16,6 @@
     "forks_count": 0,
     "updated_at": "2026-10-30T21:49:58Z",
     "language": "Python"
-  },
-  {
-    "name": "spyderdave.github.io",
-    "html_url": "https://github.com/SpyderDave/spyderdave.github.io",
-    "description": "This website",
-    "stargazers_count": 0,
-    "forks_count": 0,
-    "updated_at": "2026-10-30T18:29:32Z",
-    "language": "HTML"
   },
   {
     "name": "aws-ec2-instance-management",
