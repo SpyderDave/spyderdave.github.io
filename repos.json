@@ -1,21 +1,30 @@
 [
   {
-    "name": "spyderdave.github.io",
-    "html_url": "https://github.com/SpyderDave/spyderdave.github.io",
-    "description": "This website",
-    "stargazers_count": 0,
-    "forks_count": 0,
-    "updated_at": "2026-11-02T02:13:56Z",
-    "language": "HTML"
-  },
-  {
     "name": "aws-automated-iam-key-rotation",
     "html_url": "https://github.com/SpyderDave/aws-automated-iam-key-rotation",
     "description": null,
     "stargazers_count": 0,
     "forks_count": 0,
-    "updated_at": "2026-11-01T14:32:07Z",
+    "updated_at": "2026-11-02T12:19:34Z",
     "language": "Python"
+  },
+  {
+    "name": "pagerduty-aws-auto-remeditation",
+    "html_url": "https://github.com/SpyderDave/pagerduty-aws-auto-remeditation",
+    "description": "A framework for facilitating automated remediation in AWS via Pagerduty",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "updated_at": "2026-11-02T12:00:18Z",
+    "language": null
+  },
+  {
+    "name": "spyderdave.github.io",
+    "html_url": "https://github.com/SpyderDave/spyderdave.github.io",
+    "description": "This website",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "updated_at": "2026-11-02T10:46:38Z",
+    "language": "HTML"
   },
   {
     "name": "aws-eks-management",
