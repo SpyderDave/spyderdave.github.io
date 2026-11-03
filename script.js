@@ -37,6 +37,8 @@ function initLayout() {
 
 let reposLoaded = false;
 
+const SITE_REPO = "spyderdave.github.io";
+
 function loadRepos() {
 
   // Prevent duplicate rendering
@@ -62,8 +64,9 @@ function loadRepos() {
       container.innerHTML = "";
 
       repos
-        // Hide forks
+        // Hide forks and this website's own repo
         .filter(repo => !repo.fork)
+        .filter(repo => repo.name.toLowerCase() !== SITE_REPO)
 
         // Most recently updated first
         .sort((a, b) =>
