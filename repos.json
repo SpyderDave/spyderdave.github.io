@@ -1,5 +1,23 @@
 [
   {
+    "name": "spyderdaves-aws-utility-scripts",
+    "html_url": "https://github.com/SpyderDave/spyderdaves-aws-utility-scripts",
+    "description": null,
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "updated_at": "2026-11-02T21:00:04Z",
+    "language": "Shell"
+  },
+  {
+    "name": "spyderdave.github.io",
+    "html_url": "https://github.com/SpyderDave/spyderdave.github.io",
+    "description": "This website",
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "updated_at": "2026-11-02T20:40:54Z",
+    "language": "HTML"
+  },
+  {
     "name": "aws-automated-iam-key-rotation",
     "html_url": "https://github.com/SpyderDave/aws-automated-iam-key-rotation",
     "description": null,
@@ -16,15 +34,6 @@
     "forks_count": 0,
     "updated_at": "2026-11-02T12:00:18Z",
     "language": null
-  },
-  {
-    "name": "spyderdave.github.io",
-    "html_url": "https://github.com/SpyderDave/spyderdave.github.io",
-    "description": "This website",
-    "stargazers_count": 0,
-    "forks_count": 0,
-    "updated_at": "2026-11-02T10:46:38Z",
-    "language": "HTML"
   },
   {
     "name": "aws-eks-management",
