@@ -33,12 +33,48 @@
   <main id="content">
 
     <section class="hero">
-      <h1>Hi, I'm Dave</h1>
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
 
-      <p>
-        Cloud, security, automation, and platform engineering
-        projects from my GitHub repositories.
-      </p>
+      <div class="hero-content">
+        <span class="terminal-tag">$ whoami</span>
+
+        <h1>Hi, I'm <span class="glitch">Dave</span><span class="cursor"></span></h1>
+
+        <p>
+          Cloud, security, automation, and platform engineering
+          projects from my GitHub repositories.
+        </p>
+
+        <div class="tech-chips" aria-hidden="true">
+          <span>AWS</span>
+          <span>GCP</span>
+          <span>Terraform</span>
+          <span>Kubernetes</span>
+          <span>CI/CD</span>
+          <span>Linux</span>
+          <span>Security</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         About Me
+    ========================== -->
+    <section id="about">
+
+      <h2>About Me</h2>
+
+      <p>I’m a cloud engineering leader and infrastructure specialist with 25+ years in IT and over a decade focused on building and scaling cloud platforms in AWS and GCP. My background spans everything from traditional data center environments to modern, automated, multi-cloud architectures—giving me a practical, end-to-end perspective on how to evolve technology organizations.</p>
+
+      <p>In my current role at Telus Health, I lead a team of cloud engineers and administrators responsible for designing, building, and operating enterprise-scale cloud platforms. I work closely with product, security, and operations teams to enable secure, scalable, and cost-efficient solutions, while helping drive cloud adoption across the organization. A big part of my focus is creating well-architected landing zones, standardizing infrastructure through IaC, and enabling teams to move faster through automation and DevOps practices.</p>
+
+      <p>I’ve led large-scale cloud migrations, built AWS Organizations and Control Tower environments from the ground up, and implemented CI/CD pipelines and platform services that support multiple product teams. My approach blends hands-on technical depth with leadership—mentoring engineers, setting standards, and ensuring long-term sustainability of the platform.</p>
+
+      <p>Across my career, I’ve consistently worked at the intersection of infrastructure, networking, and systems engineering, with deep expertise in Linux, Windows, identity, networking, and high-availability environments. That foundation allows me to design cloud solutions that are not just modern, but reliable, secure, and aligned to real business needs.</p>
+
+      <p>I’m particularly interested in roles and initiatives focused on platform engineering, cloud governance, and building scalable foundations that empower development teams.</p>
+
     </section>
 
 
@@ -72,6 +108,7 @@
        Main Script
   ========================== -->
   <script src="script.js"></script>
+  <script src="hero.js"></script>
 
 </body>
 </html>
