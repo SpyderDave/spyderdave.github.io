@@ -1,11 +1,20 @@
 [
   {
+    "name": "aws-management-sso-notifier",
+    "html_url": "https://github.com/SpyderDave/aws-management-sso-notifier",
+    "description": null,
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "updated_at": "2026-11-11T21:01:48Z",
+    "language": null
+  },
+  {
     "name": "spyderdave.github.io",
     "html_url": "https://github.com/SpyderDave/spyderdave.github.io",
     "description": "This website",
     "stargazers_count": 0,
     "forks_count": 0,
-    "updated_at": "2026-11-11T10:04:47Z",
+    "updated_at": "2026-11-11T18:47:30Z",
     "language": "HTML"
   },
   {
