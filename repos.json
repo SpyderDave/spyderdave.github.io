@@ -1,5 +1,14 @@
 [
   {
+    "name": "aws-management-sso-adminsessions",
+    "html_url": "https://github.com/SpyderDave/aws-management-sso-adminsessions",
+    "description": null,
+    "stargazers_count": 0,
+    "forks_count": 0,
+    "updated_at": "2026-11-13T17:07:40Z",
+    "language": null
+  },
+  {
     "name": "spyderdave.github.io",
     "html_url": "https://github.com/SpyderDave/spyderdave.github.io",
     "description": "This website",
